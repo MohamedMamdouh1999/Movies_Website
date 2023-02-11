@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Movies Website</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="IMGS/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body class="bg-black">
+    <div id="loading"><span class="loader"></span></div>
+    <div id="scroller"></div>
+    <header class="position-fixed vh-100 top-0 bottom-0 bg-black d-flex">
+        <div class="headerNav text-white p-3 vh-100 d-flex flex-column justify-content-between">
+            <ul class="list-unstyled overflow-hidden">
+                <li id="upcomingLink" class="position-relative pb-3 navLink">Upcoming</li>
+                <li id="nowPlayingLink" class="position-relative pb-3 navLink">Now Playing</li>
+                <li id="trendingLink" class="position-relative pb-3 navLink">Trending</li>
+                <li id="popularLink" class="position-relative pb-3 navLink">Popular</li>
+                <li id="topRatedLink" class="position-relative pb-3 navLink">Top Rated</li>
+                <li id="contactUsLink" class="position-relative pb-3 navLink">Contact Us</li>
+            </ul>
+            <div>
+                <i class=" pe-2 fa-brands fa-facebook-f"></i>
+                <i class=" pe-2 fa-brands fa-twitter"></i>
+                <i class=" pe-2 fa-brands fa-instagram"></i>
+                <i class=" pe-2 fa-brands fa-dribbble"></i>
+                <div class="mt-2">Copyright © 2022 All Rights <br>Reserved.</div>
+            </div>
+        </div>
+        <div class="headerBar px-1 py-3 bg-white vh-100 text-center d-flex flex-column justify-content-between">
+            <img src="IMGS/logo.png" alt="Logo">
+            <i class="openBar fa-solid fa-align-justify fa-2x"></i>
+            <div>
+                <i class="d-block fa-solid fa-globe"></i>
+                <i class="fa-solid fa-share-nodes mt-3"></i>
+            </div>
+        </div>
+    </header>
+    <section id="home" class="d-block">
+        <div class="container py-5 mx-auto">
+            <div class="row d-block" id="searchDisplay">
+                <div class="col-12 mb-5">
+                    <form>
+                        <input class="form-control rounded-0 bg-dark border-0 text-white w-75 mx-auto" id="search" type="text" placeholder="Search ...">
+                    </form>
+                </div>
+            </div>
+            <div class="row d-block" id="counterDisplay">
+                <div class="col-12 text-center">
+                    <button id="previous" class="btn bg-white mb-2 mb-sm-0">Previous</button>
+                    <button class="btn btn-danger page mx-1 mb-2 mb-sm-0">Page <span id="page">1</span></button>
+                    <button id="next" class="btn bg-white mb-2 mb-sm-0">Next</button>
+                </div>
+            </div>
+            <div class="row d-flex mb-4 mt-3 g-5" id="display"></div>
+            <div class="row d-none g-5 text-white" id="displayDetails"></div>
+        </div>
+    </section>
+    <section id="contact" class="py-5 ps-5 d-none">
+        <div class="container py-5 text-center">
+            <h1 class="text-white fs-1 fw-light">Contact US ...</h1>
+            <form>
+                <div class="row w-75 mx-auto px-5 py-2">
+                    <div class="col-md-6">
+                        <input onkeyup="valid()" id="nameInput" class="form-control inputShadow my-3 rounded-0 border-0 border-bottom text-white bg-black" type="text" placeholder="Enter Your Name">
+                        <div id="nameAlert" class="alert alert-danger d-none" role="alert">Special Characters and Numbers not allowed</div>
+                    </div>
+                    <div class="col-md-6">
+                        <input onkeyup="valid()" id="emailInput" class="form-control inputShadow my-3 rounded-0 border-0 border-bottom text-white bg-black" type="email" placeholder="Enter Email">
+                        <div id="emailAlert" class="alert alert-danger d-none" role="alert">Enter valid email. *Ex: xxx@yyy.zzz</div>
+                    </div>
+                    <div class="col-md-6">
+                        <input onkeyup="valid()" id="phoneInput" class="form-control inputShadow my-3 rounded-0 border-0 border-bottom text-white bg-black" type="number" placeholder="Enter Phone">
+                        <div id="phoneAlert" class="alert alert-danger d-none" role="alert">Enter valid Phone Number</div>
+                    </div>
+                    <div class="col-md-6">
+                        <input onkeyup="valid()" id="ageInput" class="form-control inputShadow my-3 rounded-0 border-0 border-bottom text-white bg-black" type="number" placeholder="Enter Age">
+                        <div id="ageAlert" class="alert alert-danger d-none" role="alert">Enter valid Age</div>
+                    </div>
+                    <div class="col-md-6">
+                        <input onkeyup="valid()" id="passwordInput" class="form-control inputShadow my-3 rounded-0 border-0 border-bottom text-white bg-black" type="password" placeholder="Enter Password">
+                        <div id="passwordAlert" class="alert alert-danger d-none" role="alert">Enter valid password *Minimum eight characters, at least one letter and one number:*</div>
+                    </div>
+                    <div class="col-md-6">
+                        <input onkeyup="valid()" id="rePasswordInput" class="form-control inputShadow my-3 rounded-0 border-0 border-bottom text-white bg-black" type="password" placeholder="Enter RePassword">
+                        <div id="rePasswordAlert" class="alert alert-danger d-none" role="alert">Enter valid Repassword</div>
+                    </div>
+                    <div class="col-md-12">
+                        <input disabled id="submitInput" class="btn btn-outline-danger my-3 rounded-2 bg-black" type="submit" value="Submit">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="JS/jquery.min.js"></script>
+    <script src="JS/index.js"></script>
+</body>
+</html>
