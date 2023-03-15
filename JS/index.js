@@ -131,9 +131,19 @@ previous.addEventListener("click", _ => {
 })
 
 async function getMovies(index1,index2 = 1){
+    $("#loading span").fadeIn(0,_ => {
+        $("#loading").fadeIn(0,_ => {
+            $("body").css("overflow","auto");
+        });
+    });
     let response = await fetch(`https://api.themoviedb.org/3/${index1}?api_key=c2e271c14241b9ba82cbd5318d68db83&${index2}`);
     response = await response.json();
     displayMovies(response.results);
+    $("#loading span").fadeOut(1000,_ => {
+        $("#loading").fadeOut(1000,_ => {
+            $("body").css("overflow","auto");
+        });
+    });
 }
 function displayMovies(local){
     temp = ``
@@ -156,10 +166,20 @@ function displayMovies(local){
     display.innerHTML = temp
 }
 async function getMovie(index){
+    $("#loading span").fadeIn(0,_ => {
+        $("#loading").fadeIn(0,_ => {
+            $("body").css("overflow","auto");
+        });
+    });
     closeNav()
     let response = await fetch(`https://api.themoviedb.org/3/movie/${index}?api_key=c2e271c14241b9ba82cbd5318d68db83`);
     response = await response.json();
     displayDetails(response)
+    $("#loading span").fadeOut(1000,_ => {
+        $("#loading").fadeOut(1000,_ => {
+            $("body").css("overflow","auto");
+        });
+    });
 }
 function displayDetails(local){
     let productionCountries = ``
